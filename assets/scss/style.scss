@@ -1,0 +1,159 @@
+@import 'reset.scss';
+
+@mixin placeholder_color($color){
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &:-moz-placeholder { /* Firefox 18- */
+    color: $color;
+  }
+  &::-moz-placeholder {  /* Firefox 19+ */
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+*{
+  // outline:1px solid red;
+}
+
+.main-wrapper{
+  overflow: hidden;
+}
+
+header.header{
+  nav.navbar{
+    border:0;
+    border-radius:0;
+    margin: 0;
+    padding: 30px;
+    background: black;
+    .navbar-header{
+      button.navbar-toggle{}
+      a.navbar-brand{
+        img{}
+      }
+    }
+    .navbar-collapse{
+      ul.nav.navbar-nav{
+        li{
+          a{
+            color:white;
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 0.2px;
+            padding-top: 25px;
+            padding-bottom: 5px;
+          }
+          &.active{
+            a{
+              color:#00ffff;
+              background-color: transparent;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+section.top-banner{
+  background: url(../images/top-banner.jpg) center center no-repeat;
+  background-size: cover;
+  height: 835px;
+}
+
+section.txt-layer{
+  background: white;
+  padding: 110px 0;
+  p{
+    margin-bottom: 0;
+    line-height: 40px;
+  }
+}
+
+section.service-section{
+  background: url(../images/mountain-service.jpg) center center no-repeat;
+  background-size: cover;
+  padding: 200px 0;
+  h3{
+    color:white;
+    font-size: 34px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 50px;
+  }
+  h4{
+    color:white;
+    font-size: 26px;
+  }
+  .service-block-wrap{
+    display: flex;
+    justify-content: space-between;
+    .service-block{
+      width:32.5%;
+      padding: 8px;
+      border:1px solid white;
+      padding: 15px 20px;
+      .service-block-inner{
+        text-align: center;
+        p{
+          margin-bottom: 0;
+          color:white;
+          line-height: 2;
+        }
+      }
+    }
+  }
+  .offer-help-block{
+    padding-top: 30px;
+    .offer-row{
+      padding-top: 10px;
+      ul.offer-list{
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        li{
+          color:white;
+          font-size: 14px;
+          width: 30%;
+          position: relative;
+          list-style: disc;
+          text-align: left;
+        }
+      }
+    }
+  }
+}
+
+section.capability-section{}
+
+section.approach-section{}
+
+section.about-section{}
+
+section.value-section{}
+
+section.txt-about-block{}
+
+section.latest-profect{}
+
+section.logos-slider-block{}
+
+section.what-they-say-block{}
+
+section.contact-layer{}
+
+footer.footer{
+  background: #333;
+  padding: 20px;
+  font-size: 14px;
+  font-weight: 300;
+  p.copyright{
+    color: white;
+    margin-bottom: 0;
+  }
+}
