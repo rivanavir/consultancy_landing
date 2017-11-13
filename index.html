@@ -2,11 +2,12 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link type="text/css" rel="stylesheet" href="./assets/css/lightslider.min.css" />
   <link rel="stylesheet" href="./assets/css/style.css">
   <title>Consulting LTD</title>
 </head>
@@ -108,10 +109,45 @@
       </div>
     </section>
     <section class="capability-section">
+      <a href="#" class="slide-controls" id="prevSlide">
+        <i class="fa fa-angle-left"></i>
+      </a>
+      <a href="#" class="slide-controls" id="nextSlide">
+        <i class="fa fa-angle-right"></i>
+      </a>
       <div class="container">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="main-ttl">Capabilities</h3>
+            <h3 class="main-ttl text-center">Capabilities</h3>
+            <div class="slider-inner">
+              <ul id="capabilitySlider">
+                <li>
+                  <p>
+                    <span>Executive</span> and <span>Senior</span> HR Interim Support
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Organisation <span>Development</span> and <span>Design</span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                    Creation of <span>vision, strategy</span> and <span>plans</span>
+                  </p>
+                </li>
+                <li>
+                  <p>
+                      <span>Recruitment</span> and <span>Resourcing</span> strategy
+                  </p>
+                </li>
+                <li>
+                  <p>
+                      <span>Bidding, Tendering, Drafting</span> Documentation
+                  </p>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -120,7 +156,12 @@
       <div class="container">
           <div class="row">
             <div class="col-md-12">
-              <h3 class="main-ttl">Approach</h3>
+              <h3 class="main-ttl text-center">Approach</h3>
+              <div class="text-block">
+                <h5>There are times when companies know exactly what to do and when to do it and times when they don’t. Sometimes they have the expertise in house and sometimes they need that bit of extra help for the team or the organisation.</h5>
+                <p>As a hands-on strategist, I’m happy to roll my sleeves up to help. I believe it is critical to have a well thought through plan and some practical solutions but crucially, there is a need to move on and implement the plan as soon as possible.</p>
+                <p>Friendly and approachable, I employ a high work ethic, good communication skills, and work in collaboration. Ultimately, getting things done in the right way, is what it’s all about for me.</p>
+              </div>
             </div>
           </div>
         </div>
@@ -128,9 +169,28 @@
     <section class="about-section">
       <div class="container">
         <div class="row">
-          <div class="col-md-6">
-            <h3 class="main-ttl">Capabilities</h3>
+          <div class="col-md-5">
+            <div class="block-inner">
+              <h3 class="main-ttl">About</h3>
+              <p>I have extensive experience as a Senior Board member operating across various sectors including FTSE 250 companies.</p>
+              <ul class="command-list">
+                <li>Northern Rail Limited – HR and Change Director</li>
+                <li>IDM Limited – Managing Director</li>
+                <li>Arla Foods plc – Group HR Director</li>
+                <li>Express Dairies plc – Group HR Director</li>
+                <li>Caradon Catnic Limited – HR Director</li>
+                <li>Caradon Stelrad Limited – Head of HR Europe</li>
+              </ul>
+              <p>I hold a Masters Degree in Human Resources Management as well as a Financial Times Diploma in Non-Executive Directorship.</p>
+              <p>My early career was in engineering, progressing through management into human resources.</p>
+            </div>
           </div>
+        </div>
+      </div>
+      <div class="about-flex-wrapper">
+        <div class="img-list">
+          <div class="img-wrap" style="background-image:url(./assets/images/about-img-1.jpg)"></div>
+          <div class="img-wrap" style="background-image:url(./assets/images/about-img-2.jpg)"></div>
         </div>
       </div>
     </section>
@@ -174,16 +234,96 @@
       </div>
     </section>
     <section class="logos-slider-block">
-      <div class="container">
-        <div class="logos-slider-inner"></div>
-      </div>
+      <!-- <div class="container"> -->
+        <div class="logos-slider-inner">
+          <ul id="logosSlider">
+            <li>
+              <img src="./assets/images/logos/logos-img-1.png" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-2.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-3.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-4.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-5.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-6.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-7.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-8.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-9.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-10.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-11.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-12.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-13.jpeg" alt="">
+            </li>
+            <li>
+              <img src="./assets/images/logos/logos-img-14.jpeg" alt="">
+            </li>
+          </ul>
+        </div>
+      <!-- </div> -->
     </section>
     <section class="what-they-say-block">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center">
             <h3 class="main-ttl white">What they say</h3>
-            
+            <div class="what-slider-wrapper">
+              <div id="whatSaySlider">
+                <div class="slideTxt">
+                  <div class="leftTxt">
+                    <p>“I worked with Adrian for 3 years in a volatile and challenging employee relations environment and what shone through was his ability to make measured and objective business decisions at critical moments. Adrian’s creative, business focused attention to detail taught me the importance of assessing all options before taking action and how to position the business in order to make the right move at the right time. Having Adrian as a mentor allowed me to challenge my own way of working and this has without doubt helped me to secure my first HR Director role”.</p>
+                  </div>
+                  <div class="rightTxt">
+                    <p><span>Jane English,</span> <br> Human Resources Director, Merseyrail Electrics Limited</p>
+                  </div>
+                </div>
+                <div class="slideTxt">
+                  <div class="leftTxt">
+                    <p>“I worked with Adrian for 3 years in a volatile and challenging employee relations environment and what shone through was his ability to make measured and objective business decisions at critical moments. Adrian’s creative, business focused attention to detail taught me the importance of assessing all options before taking action and how to position the business in order to make the right move at the right time. Having Adrian as a mentor allowed me to challenge my own way of working and this has without doubt helped me to secure my first HR Director role”.</p>
+                  </div>
+                  <div class="rightTxt">
+                    <p><span>Jane English,</span> <br> Human Resources Director, Merseyrail Electrics Limited</p>
+                  </div>
+                </div>
+                <div class="slideTxt">
+                  <div class="leftTxt">
+                    <p>“I worked with Adrian for 3 years in a volatile and challenging employee relations environment and what shone through was his ability to make measured and objective business decisions at critical moments. Adrian’s creative, business focused attention to detail taught me the importance of assessing all options before taking action and how to position the business in order to make the right move at the right time. Having Adrian as a mentor allowed me to challenge my own way of working and this has without doubt helped me to secure my first HR Director role”.</p>
+                  </div>
+                  <div class="rightTxt">
+                    <p><span>Jane English,</span> <br> Human Resources Director, Merseyrail Electrics Limited</p>
+                  </div>
+                </div>
+                <div class="slideTxt">
+                  <div class="leftTxt">
+                    <p>“I worked with Adrian for 3 years in a volatile and challenging employee relations environment and what shone through was his ability to make measured and objective business decisions at critical moments. Adrian’s creative, business focused attention to detail taught me the importance of assessing all options before taking action and how to position the business in order to make the right move at the right time. Having Adrian as a mentor allowed me to challenge my own way of working and this has without doubt helped me to secure my first HR Director role”.</p>
+                  </div>
+                  <div class="rightTxt">
+                    <p><span>Jane English,</span> <br> Human Resources Director, Merseyrail Electrics Limited</p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -240,6 +380,7 @@
 
   <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="./assets/js/lightslider.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>
 </html>

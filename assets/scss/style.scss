@@ -170,7 +170,7 @@ section.capability-section{
   position: relative;
   background: url(../images/compability-bg.jpg) top center no-repeat;
   background-size: cover;
-  padding: 100px 0 400px;
+  padding: 100px 0 300px;
   &:before{
     position: absolute;
     content:'';
@@ -188,11 +188,153 @@ section.capability-section{
     background: linear-gradient(to bottom, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 );
   }
+  a{
+    &.slide-controls{
+      position: absolute;
+      top: 50%;
+      font-size: 50px;
+      color:#1e4567;
+      width: 60px;
+      height: 60px;
+      display: inline-block;
+      border-radius:50%;
+      border:5px solid #1e4567;
+      text-align: center;
+      i.fa{
+        line-height: 48px;
+      }
+    }
+    &#prevSlide{
+      left:5%;
+    }
+    &#nextSlide{
+      right:5%;
+    }
+  }
+
+  .slider-inner{
+    padding-top: 150px;
+    .lSSlideWrapper{
+      overflow-y: visible;
+      ul.lightSlider{
+        overflow-y: visible;
+        li{
+          background: white;
+          border-radius:20px;
+          border:10px solid #1e4567;
+          padding: 10px 20px;
+          text-align: center;
+          height: 230px;
+          display: flex;
+          justify-content: center;
+          align-items:center;
+          // transform:scale(.85);
+          transition:.3s ease;
+          // &.active+li{
+          //   transform:scale(1);
+          // }
+          &.centerSlide{
+            transform:scale(1);
+          }
+          p{
+            font-size: 22px;
+            line-height: 1.6;
+            margin-bottom: 0;
+            span{
+              font-weight: 500;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
-section.approach-section{}
+section.approach-section{
+  padding: 50px 0;
+  background: #f2f2f2;
+  .text-block{
+    padding: 50px 80px;
+    position: relative;
+    quotes: "“" "”" "‘" "’";
+    &:before,
+    &:after{
+      position: absolute;
+      display: inline-block;
+      font-size: 150px;
+      font-style: italic;
+      font-weight: bold;
+      color:#f2f2f2;
+      text-shadow:0 0 2px black;
+      font-family: monospace;
+    }
+    &:before{
+      content: open-quote;
+      top: 0;
+      left: -20px;
+    }
+    &:after{
+      content: close-quote;
+      right: -20px;
+      bottom: 0;
+    }
+    h5{
+      font-size: 24px;
+      line-height: 2;
+      font-weight: 400;
+      margin-bottom: 25px;
+    }
+    p{
+      margin-bottom: 25px;
+      font-size: 14px;
+      line-height: 2;
+      font-weight: 300;
+    }
+  }
+}
 
-section.about-section{}
+section.about-section{
+  position: relative;
+  min-height: 850px;
+  .block-inner{
+    padding: 60px 0;
+    h3.main-ttl{}
+    p{
+      color:#4c4c4c;
+      margin-bottom: 25px;
+      font-size: 18px;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+    ul.command-list{
+      margin-bottom: 25px;
+      li{
+        color:black;
+        line-height: 1.8;
+        margin-bottom: 10px;
+      }
+    }
+  }
+  .about-flex-wrapper{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 50%;
+  }
+  .img-list{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    .img-wrap{
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: top center;
+      height: 50%;
+      width: 100%;
+    }
+  }
+}
 
 section.value-section{
   padding: 100px 0;
@@ -279,9 +421,45 @@ section.latest-profect{
 }
 
 section.logos-slider-block{
-  padding: 150px 0;
+  padding: 180px 0;
   background: url(../images/logos-bg.jpg) center center no-repeat;
   background-size: cover;
+  position: relative;
+  &:before{
+    position: absolute;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 180px;
+    left: 0;
+    top: 0;
+    background: rgba(86,116,141,1);
+    background: -moz-linear-gradient(top, rgba(86,116,141,1) 0%, rgba(86,116,141,0) 100%);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(86,116,141,1)), color-stop(100%, rgba(86,116,141,0)));
+    background: -webkit-linear-gradient(top, rgba(86,116,141,1) 0%, rgba(86,116,141,0) 100%);
+    background: -o-linear-gradient(top, rgba(86,116,141,1) 0%, rgba(86,116,141,0) 100%);
+    background: -ms-linear-gradient(top, rgba(86,116,141,1) 0%, rgba(86,116,141,0) 100%);
+    background: linear-gradient(to bottom, rgba(86,116,141,1) 0%, rgba(86,116,141,0) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#56748d', endColorstr='#56748d', GradientType=0 );
+  }
+  .logos-slider-inner{
+    width: 90%;
+    margin-left: 5%;
+    ul#logosSlider{
+      li{
+        display: inline-block;
+        width: 200px;
+        height: 120px;
+        background: white;
+        text-align: center;
+        padding: 15px;
+        img{
+          max-height:100%;
+          max-width: 100%;
+        }
+      }
+    }
+  }
 }
 
 section.what-they-say-block{
@@ -291,10 +469,62 @@ section.what-they-say-block{
     text-transform: inherit;
     font-weight: 300;
   }
+  .what-slider-wrapper{
+    .lSSlideOuter{
+      .lSSlideWrapper{
+        // padding-bottom: 120px;
+        min-height:200px;
+      }
+      ul.lSPager.lSpg{
+        >li{
+          a{
+            width: 14px;
+            height: 14px;
+            background: transparent;
+            border:1px solid #808080;
+          }
+          &.active{
+            a{
+              background: #808080;
+            }
+          }
+        }
+      }
+    }
+    .slideTxt{
+      display: flex;
+      p{
+        color:white;
+        margin-bottom: 0;
+        line-height: 1.3;
+      }
+      .leftTxt{
+        min-width: 60%;
+        padding: 0 10px;
+        border-right:1px solid rgba(255,255,255,.3);
+        text-align: right;
+        p{
+          font-size: 14px;
+        }
+      }
+      .rightTxt{
+        min-width: 40%;
+        padding: 0 10px;
+        text-align: left;
+        p{
+          font-size: 16px;
+          span{
+            font-size: 20px;
+          }
+        }
+      }
+    }
+  }
 }
 
 section.contact-layer{
   padding: 30px 0;
+  background: #f7f7f7;
   h3.main-ttl{
     text-transform: inherit;
     font-weight: 300;
