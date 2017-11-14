@@ -6,7 +6,11 @@
 
 .main-wrapper{
   overflow: hidden;
-
+  padding-top: 110px;
+  @media(max-width:768px){
+    padding-top: 70px;
+  }
+  
   h3.main-ttl{
     // color:;
     font-size: 34px;
@@ -22,7 +26,10 @@
 
 header.header{
   box-shadow: 0 0 10px rgba(0,0,0,.5);
-  position: relative;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
   nav.navbar{
     border:0;
@@ -30,10 +37,21 @@ header.header{
     margin: 0;
     padding: 30px;
     background: black;
+    @media(max-width:768px){
+      padding: 10px;
+    }
     .navbar-header{
-      button.navbar-toggle{}
+      button.navbar-toggle{
+        @media(max-width:768px){
+          margin-right: 0;
+        }
+      }
       a.navbar-brand{
-        img{}
+        img{
+          @media(max-width:768px){
+            width: 200px;
+          }
+        }
       }
     }
     .navbar-collapse{
@@ -44,10 +62,11 @@ header.header{
             text-transform: uppercase;
             font-size: 14px;
             letter-spacing: 0.2px;
-            padding-top: 25px;
+            padding-top: 5px;
             padding-bottom: 5px;
             transition:.3s ease-in-out;
             @media(min-width:992px){
+              padding-top: 25px;
               &:hover{
                 color:#00ffff;
               }
@@ -66,10 +85,27 @@ header.header{
 }
 
 section.top-banner{
-  background: url(../images/top-banner.jpg) center center no-repeat;
+  background: url(../images/top-banner.jpg) top center no-repeat;
   background-size: cover;
+  background-attachment: fixed;
   height: 835px;
   position: relative;
+  @media(max-width:768px){
+    background-position: top right;
+    height: 500px;
+    background-size: 150%;
+  }
+  @media(max-width:560px){
+    height: 400px;
+    background-size: 200%;
+  }
+  @media(max-width:560px){
+    height: 350px;
+    background-position: -270px 30px;
+  }
+  @media(max-width:375px){
+    background-position: -250px 60px;
+  }
   &:before{
     position: absolute;
     content: '';
@@ -113,6 +149,9 @@ section.top-banner{
 section.txt-layer{
   background: white;
   padding: 110px 0;
+  @media(max-width:768px){
+    padding: 50px 0;
+  }
   p{
     margin-bottom: 0;
     line-height: 40px;
@@ -123,6 +162,10 @@ section.service-section{
   background: url(../images/mountain-service.jpg) center center no-repeat;
   background-size: cover;
   padding: 200px 0;
+  background-attachment: fixed;
+  @media(max-width:768px){
+    padding: 50px 0;
+  }
   h4{
     color:white;
     font-size: 26px;
@@ -130,11 +173,17 @@ section.service-section{
   .service-block-wrap{
     display: flex;
     justify-content: space-between;
+    @media(max-width:768px){
+      flex-direction: column;
+    }
     .service-block{
-      width:32.5%;
-      padding: 8px;
       border:1px solid white;
       padding: 15px 20px;
+      margin-bottom: 10px;
+      @media(min-width:769px){
+        width:32.5%;
+        margin-bottom: 0;
+      }
       .service-block-inner{
         text-align: center;
         p{
@@ -153,6 +202,10 @@ section.service-section{
         display: flex;
         justify-content: space-between;
         margin: 0;
+        @media(max-width:768px){
+          flex-direction: column;
+          margin-left: 20px;
+        }
         li{
           color:white;
           font-size: 14px;
@@ -160,6 +213,11 @@ section.service-section{
           position: relative;
           list-style: disc;
           text-align: left;
+          @media(max-width:768px){
+            text-align: center;
+            width: 100%;
+            line-height: 1.5;
+          }
         }
       }
     }
@@ -171,6 +229,12 @@ section.capability-section{
   background: url(../images/compability-bg.jpg) top center no-repeat;
   background-size: cover;
   padding: 100px 0 300px;
+  @media(max-width:1024px){
+    padding: 100px 0 150px;
+  }
+  @media(max-width:768px){
+    padding: 50px 0 100px;
+  }
   &:before{
     position: absolute;
     content:'';
@@ -200,41 +264,63 @@ section.capability-section{
       border-radius:50%;
       border:5px solid #1e4567;
       text-align: center;
+      @media(max-width:1170px){
+        display: none;
+      }
       i.fa{
         line-height: 48px;
       }
     }
     &#prevSlide{
       left:5%;
+      @media(max-width:1300px){
+        left: 2%;
+      }
     }
     &#nextSlide{
       right:5%;
+      @media(max-width:1300px){
+        right: 2%;
+      }
     }
   }
 
   .slider-inner{
     padding-top: 150px;
+    @media(max-width:1024px){
+      padding-top: 50px;
+    }
+    @media(max-width:768px){
+      padding-top: 0;
+    }
     .lSSlideWrapper{
       overflow-y: visible;
       ul.lightSlider{
         overflow-y: visible;
+        height: auto !important;
         li{
           background: white;
-          border-radius:20px;
-          border:10px solid #1e4567;
+          border-radius:25px;
+          border:12px solid #1e4567;
           padding: 10px 20px;
           text-align: center;
-          height: 230px;
+          height: 200px;
           display: flex;
           justify-content: center;
           align-items:center;
-          // transform:scale(.85);
+          transform:scale(.85) !important;
           transition:.3s ease;
-          // &.active+li{
-          //   transform:scale(1);
-          // }
+          &.active{
+            transform:scale(0.85) !important;
+            @media(max-width:768px){
+              transform:scale(1) !important;
+            }
+          }
           &.centerSlide{
-            transform:scale(1);
+            transform:scale(1) !important;
+            @media(max-width:768px){
+              transform:scale(.85) !important;
+            }
           }
           p{
             font-size: 22px;
@@ -257,6 +343,9 @@ section.approach-section{
     padding: 50px 80px;
     position: relative;
     quotes: "“" "”" "‘" "’";
+    @media(max-width:768px){
+      padding: 0 30px;
+    }
     &:before,
     &:after{
       position: absolute;
@@ -267,22 +356,34 @@ section.approach-section{
       color:#f2f2f2;
       text-shadow:0 0 2px black;
       font-family: monospace;
+      height: 50px;
+      line-height: 80px;
+      @media(max-width:768px){
+        font-size: 80px;
+      }
     }
     &:before{
       content: open-quote;
-      top: 0;
+      top: -20px;
       left: -20px;
     }
     &:after{
       content: close-quote;
       right: -20px;
-      bottom: 0;
+      bottom: -20px;
+      @media(max-width:768px){
+        right: 0;
+      }
     }
     h5{
       font-size: 24px;
       line-height: 2;
       font-weight: 400;
       margin-bottom: 25px;
+      @media(max-width:768px){
+        font-size: 20px;
+        line-height: 1.5;
+      }
     }
     p{
       margin-bottom: 25px;
@@ -298,6 +399,9 @@ section.about-section{
   min-height: 850px;
   .block-inner{
     padding: 60px 0;
+    @media(max-width:768px){
+      padding: 40px 0;
+    }
     h3.main-ttl{}
     p{
       color:#4c4c4c;
@@ -321,11 +425,18 @@ section.about-section{
     right: 0;
     bottom: 0;
     width: 50%;
+    @media(max-width:768px){
+      position: relative;
+      width:auto;
+    }
   }
   .img-list{
     display: flex;
     flex-direction: column;
     height: 100%;
+    @media(max-width:768px){
+      height: 100vh;
+    }
     .img-wrap{
       background-repeat: no-repeat;
       background-size: cover;
@@ -341,7 +452,11 @@ section.value-section{
   background: url(../images/value-bg.jpg) center center no-repeat;
   background-size: cover;
   position: relative;
-  height: 50vw;
+  background-attachment: fixed;
+  height: 60vw;
+  @media(max-width:768px){
+    height:auto;
+  }
   &:before,
   &:after{
     position: absolute;
@@ -386,6 +501,9 @@ section.value-section{
 section.txt-about-block{
   background: #f2f2f2;
   padding: 80px 0;
+  @media(max-width:768px){
+    padding: 40px 0;
+  }
   h5{
     margin-bottom: 30px;
     font-size: 20px;
@@ -405,12 +523,18 @@ section.txt-about-block{
 
 section.latest-profect{
   padding: 80px 0;
+  @media(max-width:768px){
+    padding: 20px 0;
+  }
   h3.main-ttl{
     text-align: center;
     text-transform: inherit;
     margin-bottom: 25px;
   }
   ul.project-list{
+    @media(max-width:768px){
+      margin-left: 20px;
+    }
     li{
       list-style: disc;
       line-height: 2;
@@ -425,6 +549,13 @@ section.logos-slider-block{
   background: url(../images/logos-bg.jpg) center center no-repeat;
   background-size: cover;
   position: relative;
+  background-attachment: fixed;
+  @media(max-width:768px){
+    padding: 100px 0;
+  }
+  @media(max-width:560px){
+    padding: 60px 0;
+  }
   &:before{
     position: absolute;
     content: '';
@@ -447,12 +578,14 @@ section.logos-slider-block{
     margin-left: 5%;
     ul#logosSlider{
       li{
-        display: inline-block;
-        width: 200px;
+        width: 300px;
         height: 120px;
         background: white;
         text-align: center;
         padding: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
         img{
           max-height:100%;
           max-width: 100%;
@@ -464,16 +597,30 @@ section.logos-slider-block{
 
 section.what-they-say-block{
   padding: 30px 0;
-  background: #333;
+  background: url(../images/wts-bg-top-right.png) 5% 25% no-repeat,
+  url(../images/wts-bg-top-right.png) -2% 62% no-repeat,
+  url(../images/wts-bg-top-left.png) -4% 65% no-repeat,
+  url(../images/wts-bg-top-left.png) 0 30% no-repeat,
+  url(../images/wts-bg-bottom-right.png) 92% 80% no-repeat,
+  url(../images/wts-bg-top-left.png) right 20% no-repeat,
+  url(../images/wts-bg-bottom-left.png) right 73% no-repeat, #333;
+  background-size: 20%, 15%, 28%, 12.5%, 28%, 34%, 12.5%;
   h3.main-ttl{
     text-transform: inherit;
     font-weight: 300;
   }
   .what-slider-wrapper{
+    padding-top: 50px;
+    @media(max-width:768px){
+      padding-top: 0;
+    }
     .lSSlideOuter{
       .lSSlideWrapper{
         // padding-bottom: 120px;
-        min-height:200px;
+        min-height:300px;
+        .lightSlider{
+          margin-bottom: 20px;
+        }
       }
       ul.lSPager.lSpg{
         >li{
@@ -493,6 +640,9 @@ section.what-they-say-block{
     }
     .slideTxt{
       display: flex;
+      @media(max-width:768px){
+        flex-direction: column;
+      }
       p{
         color:white;
         margin-bottom: 0;
@@ -503,6 +653,12 @@ section.what-they-say-block{
         padding: 0 10px;
         border-right:1px solid rgba(255,255,255,.3);
         text-align: right;
+        @media(max-width:768px){
+          border-top:1px solid rgba(255,255,255,.3);
+          border-right:0;
+          padding: 10px 0;
+          order:2;
+        }
         p{
           font-size: 14px;
         }
@@ -511,6 +667,11 @@ section.what-they-say-block{
         min-width: 40%;
         padding: 0 10px;
         text-align: left;
+        @media(max-width:768px){
+          text-align: right;
+          padding: 10px 0;
+          order:1;
+        }
         p{
           font-size: 16px;
           span{
@@ -528,6 +689,32 @@ section.contact-layer{
   h3.main-ttl{
     text-transform: inherit;
     font-weight: 300;
+  }
+  p{
+    margin-bottom: 20px;
+  }
+  form{
+    .form-group{
+      @media(max-width:768px){
+        margin-bottom: 0;
+      }
+      .form-control{
+        @media(max-width:768px){
+          margin-bottom: 15px;
+        }
+      }
+    }
+    button.btn{
+      color:white;
+      background: #787878;
+      text-transform: uppercase;
+      font-weight: bold;
+      &:hover{
+        @media (min-width:992px){
+          background: rgba(120,120,120,.8);
+        }
+      }
+    }
   }
 }
 

@@ -1,8 +1,27 @@
 $(document).ready(function () {
 
+  $(window).on('load scroll', function () {
+    let scrolled = $(this).scrollTop() + 110;
+    let scrollSection = [topBanner, serviceSect, valueSection, logosBlock];
+
+    $.each($(scrollSection), function(i){
+      let elem = this;
+      let windowHeight = $(window).height();
+      let elHeight = $(this).height() + 110;
+      let elOffset = $(this).offset().top + 110;
+      // $(this).css('background-position','center ' + (-scrolled / 5) + 'px');
+      // console.log(i, scrolled, elHeight);
+      // if( $(this).offset().top <= scrolled && scrolled < elHeight ){
+      if( $(this).offset().top + scrollSection <= scrolled){
+        console.log(i, scrolled, elHeight);
+      }
+    })
+    // $(...scrollSection).css('background-position', 'center ' + (-scrolled / 5) + 'px');
+  });
+  
   let slider = $('#capabilitySlider').lightSlider({
     item: 3,
-    loop: true,
+    loop: false,
     autoWidth: false,
     pager: false,
     slideMove: 1,
@@ -11,17 +30,30 @@ $(document).ready(function () {
     useCSS: true,
     controls: false,
     centerSlide: true,
+    responsive: [
+      {
+        breakpoint:769,
+        settings: {
+          item:1
+        }
+      },
+    ],
+    onBeforeSlide: function (el) {
+      el.children('li.centerSlide').removeClass('centerSlide');
+      setTimeout(function(){
+        el.children('li.active').next().addClass('centerSlide');
+      },100);
+    },
     onAfterSlide: function (el) {
       setTimeout(function(){
-        el.children('li:not(.centerSlide)').css('transform','scale(.85)');
-      },50);
-      el.children('li.centerSlide').removeClass('centerSlide');
-      el.children('li.active').next().addClass('centerSlide');
+        el.children('li.active').next().addClass('centerSlide');
+      },100);
     },
     onSliderLoad: function (el) {
       setTimeout(function(){
         el.children('li:not(.centerSlide)').css('transform','scale(.85)');
       },50);
+      el.children('li.active').next().addClass('centerSlide');
       $('#prevSlide').on('click', function(e){
         e.preventDefault();
         slider.goToPrevSlide();
@@ -39,6 +71,7 @@ $(document).ready(function () {
     loop: true,
     auto: true,
     pager: false,
+    controls: false,
     easing: 'cubic-bezier(0.25, 0, 0.25, 1)',
     speed: 1000,
     pause: 3000,
