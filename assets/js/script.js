@@ -1,22 +1,27 @@
 $(document).ready(function () {
 
   $(window).on('load scroll', function () {
-    let scrolled = $(this).scrollTop() + 110;
-    let scrollSection = [topBanner, serviceSect, valueSection, logosBlock];
+  //   let scrolled = $(this).scrollTop() + 110;
+  //   let scrollSection = [topBanner, serviceSect, valueSection, logosBlock];
 
-    $.each($(scrollSection), function(i){
-      let elem = this;
-      let windowHeight = $(window).height();
-      let elHeight = $(this).height() + 110;
-      let elOffset = $(this).offset().top + 110;
-      // $(this).css('background-position','center ' + (-scrolled / 5) + 'px');
-      // console.log(i, scrolled, elHeight);
-      // if( $(this).offset().top <= scrolled && scrolled < elHeight ){
-      if( $(this).offset().top + scrollSection <= scrolled){
-        console.log(i, scrolled, elHeight);
-      }
-    })
-    // $(...scrollSection).css('background-position', 'center ' + (-scrolled / 5) + 'px');
+  //   $.each($(scrollSection), function(i){
+  //     let elem = this;
+  //     let windowHeight = $(window).height();
+  //     let elHeight = $(this).height() + 110;
+  //     let elOffset = $(this).offset().top + 110;
+  //     // $(this).css('background-position','center ' + (-scrolled / 5) + 'px');
+  //     // console.log(i, scrolled, elHeight);
+  //     // if( $(this).offset().top <= scrolled && scrolled < elHeight ){
+  //     if( $(this).offset().top + scrollSection <= scrolled){
+  //       console.log(i, scrolled, elHeight);
+  //     }
+  //   })
+  //   // $(...scrollSection).css('background-position', 'center ' + (-scrolled / 5) + 'px');
+  });
+
+  $('.parallax-window').parallax({
+    naturalWidth: 2000,
+    naturalHeight: 1000
   });
   
   let slider = $('#capabilitySlider').lightSlider({

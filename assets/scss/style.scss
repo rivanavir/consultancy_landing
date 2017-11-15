@@ -4,12 +4,27 @@
   // outline:1px solid red;
 }
 
-.main-wrapper{
-  overflow: hidden;
+body{
   padding-top: 110px;
   @media(max-width:768px){
     padding-top: 70px;
   }
+}
+
+.parallax-window {
+  // min-height: 400px;
+  @media(min-width:1170px){
+    background: transparent !important;
+  }
+}
+.parallax-mirror{
+  img.parallax-slider{
+    height:auto !important;
+  }
+}
+
+.main-wrapper{
+  overflow: hidden;
   
   h3.main-ttl{
     // color:;
