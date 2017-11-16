@@ -33,19 +33,19 @@
           <!-- Collect the nav links, forms, and other content for toggling -->
           <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav navbar-right">
-              <li><a href="#">Home</a></li>
-              <li class="active"><a href="#">Services</a></li>
-              <li><a href="#">Capabilities</a></li>
-              <li><a href="#">Approach</a></li>
-              <li><a href="#">About</a></li>
-              <li><a href="#">Work</a></li>
-              <li><a href="#">They say</a></li>
+              <li data-href="#topBanner"><a href="#">Home</a></li>
+              <li data-href="#serviceSect" class="active"><a href="#">Services</a></li>
+              <li data-href="#capabilitySect"><a href="#">Capabilities</a></li>
+              <li data-href="#approachSect"><a href="#">Approach</a></li>
+              <li data-href="#aboutSect"><a href="#">About</a></li>
+              <li data-href="#workBlock"><a href="#">Work</a></li>
+              <li data-href="#whatTheyBlock"><a href="#">They say</a></li>
             </ul>
           </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
       </nav>
     </header>
-    <section class="top-banner parallax-window" data-bleed="110" data-parallax="scroll" data-image-src="./assets/images/top-banner.jpg" id="topBanner">
+    <section class="top-banner" data-stellar-background-ratio="0" id="topBanner">
       <div class="top-banner-inner">
         <p>
           <span>Welcome</span><br>
@@ -65,7 +65,7 @@
         </div>
       </div>
     </section>
-    <section class="service-section parallax-window" data-parallax="scroll" data-image-src="./assets/images/mountain-service.jpg" id="serviceSect">
+    <section class="service-section" data-stellar-background-ratio="0" id="serviceSect">
       <div class="container">
         <div class="row">
           <div class="col-md-12 text-center">
@@ -108,7 +108,7 @@
         </div>
       </div>
     </section>
-    <section class="capability-section">
+    <section class="capability-section" id="capabilitySect">
       <a href="#" class="slide-controls" id="prevSlide">
         <i class="fa fa-angle-left"></i>
       </a>
@@ -123,27 +123,27 @@
               <ul id="capabilitySlider">
                 <li>
                   <p>
-                    <span>Executive</span> and <span>Senior</span> HR Interim Support
+                    <span>Executive</span> and <span>Senior</span><br> HR Interim Support
                   </p>
                 </li>
                 <li>
                   <p>
-                    Organisation <span>Development</span> and <span>Design</span>
+                    Organisation<br> <span>Development</span><br> and <span>Design</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                    Creation of <span>vision, strategy</span> and <span>plans</span>
+                    Creation of <br><span>vision, strategy</span><br> and <span>plans</span>
                   </p>
                 </li>
                 <li>
                   <p>
-                      <span>Recruitment</span> and <span>Resourcing</span> strategy
+                      <span>Recruitment</span><br> and <span>Resourcing</span><br> strategy
                   </p>
                 </li>
                 <li>
                   <p>
-                      <span>Bidding, Tendering, Drafting</span> Documentation
+                      <span>Bidding,<br> Tendering, Drafting</span><br> Documentation
                   </p>
                 </li>
               </ul>
@@ -152,7 +152,7 @@
         </div>
       </div>
     </section>
-    <section class="approach-section">
+    <section class="approach-section" id="approachSect">
       <div class="container">
           <div class="row">
             <div class="col-md-12">
@@ -166,7 +166,7 @@
           </div>
         </div>
     </section>
-    <section class="about-section">
+    <section class="about-section" id="aboutSect">
       <div class="container">
         <div class="row">
           <div class="col-md-5">
@@ -194,7 +194,7 @@
         </div>
       </div>
     </section>
-    <section class="value-section parallax-window" data-parallax="scroll" data-image-src="./assets/images/value-bg.jpg" id="valueSection">
+    <section class="value-section">
       <div class="container">
         <div class="row">
           <div class="col-md-8">
@@ -217,7 +217,7 @@
         </div>
       </div>
     </section>
-    <section class="latest-profect">
+    <section class="latest-profect" id="workBlock">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
@@ -233,7 +233,7 @@
         </div>
       </div>
     </section>
-    <section class="logos-slider-block parallax-window" data-parallax="scroll" data-image-src="./assets/images/logos-bg.jpg" id="logosBlock">
+    <section class="logos-slider-block" data-stellar-background-ratio="0" id="logosBlock">
       <div class="logos-slider-inner">
         <ul id="logosSlider">
           <li>
@@ -281,7 +281,7 @@
         </ul>
       </div>
     </section>
-    <section class="what-they-say-block">
+    <section class="what-they-say-block" id="whatTheyBlock">
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2 text-center">
@@ -376,9 +376,9 @@
   </footer>
 
 
-  <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js"></script>
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/parallax.js/1.4.2/parallax.min.js"></script>
+  <script src="./assets/js/jquery.stellar.min.js"></script>
   <script src="./assets/js/lightslider.min.js"></script>
   <script src="./assets/js/script.js"></script>
 </body>

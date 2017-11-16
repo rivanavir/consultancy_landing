@@ -11,19 +11,6 @@ body{
   }
 }
 
-.parallax-window {
-  // min-height: 400px;
-  @media(min-width:1170px){
-    background: transparent !important;
-  }
-}
-.parallax-mirror{
-  img.parallax-slider{
-    height:auto !important;
-    
-  }
-}
-
 .main-wrapper{
   overflow: hidden;
   
@@ -468,7 +455,6 @@ section.value-section{
   background: url(../images/value-bg.jpg) center center no-repeat;
   background-size: cover;
   position: relative;
-  background-attachment: fixed;
   height: 60vw;
   @media(max-width:768px){
     height:auto;

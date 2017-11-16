@@ -1,28 +1,55 @@
 $(document).ready(function () {
 
-  $(window).on('load scroll', function () {
-  //   let scrolled = $(this).scrollTop() + 110;
-  //   let scrollSection = [topBanner, serviceSect, valueSection, logosBlock];
-
-  //   $.each($(scrollSection), function(i){
-  //     let elem = this;
-  //     let windowHeight = $(window).height();
-  //     let elHeight = $(this).height() + 110;
-  //     let elOffset = $(this).offset().top + 110;
-  //     // $(this).css('background-position','center ' + (-scrolled / 5) + 'px');
-  //     // console.log(i, scrolled, elHeight);
-  //     // if( $(this).offset().top <= scrolled && scrolled < elHeight ){
-  //     if( $(this).offset().top + scrollSection <= scrolled){
-  //       console.log(i, scrolled, elHeight);
-  //     }
-  //   })
-  //   // $(...scrollSection).css('background-position', 'center ' + (-scrolled / 5) + 'px');
+  // Cache selectors
+  var lastId,
+  topMenu = $("header"),
+  topMenuHeight = topMenu.outerHeight()+3,
+  // All list items
+  menuItems = topMenu.find(".navbar-nav li"),
+  // Anchors corresponding to menu items
+  scrollItems = menuItems.map(function(){
+    var item = $($(this).data("href"));
+    if (item.length) { return item; }
   });
 
-  $('.parallax-window').parallax({
-    naturalWidth: 2000,
-    naturalHeight: 1000
+  // Bind click handler to menu items
+  // so we can get a fancy scroll animation
+  menuItems.click(function(e){
+    var href = $(this).data("href"),
+        offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight+3;
+    $('html, body').stop().animate({
+        scrollTop: offsetTop
+    }, 500);
+    e.preventDefault();
   });
+
+  // Bind to scroll
+  $(window).scroll(function(){
+    // Get container scroll position
+    var fromTop = $(this).scrollTop()+topMenuHeight;
+
+    // Get id of current scroll item
+    var cur = scrollItems.map(function(){
+      if ($(this).offset().top < fromTop)
+        return this;
+    });
+    // Get the id of the current element
+    cur = cur[cur.length-1];
+    var id = cur && cur.length ? cur[0].id : "";
+
+    if (lastId !== id) {
+      lastId = id;
+      // Set/remove active class
+      menuItems
+        .removeClass("active")
+        .filter("[data-href='#"+id+"']").addClass("active");
+    }
+  });
+  
+  $('#topBanner').stellar();
+  $('#serviceSect').stellar();
+  $('#valueSection').stellar();
+  $('#logosBlock').stellar();
   
   let slider = $('#capabilitySlider').lightSlider({
     item: 3,
