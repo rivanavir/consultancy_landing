@@ -137,6 +137,9 @@ section.top-banner{
       font-size: 18px;
       line-height: 3.5;
       display:inline-block;
+      @media(max-width:768px){
+        line-height: 2.5;
+      }
       &.part{
         line-height: 1.5;
       }
@@ -147,6 +150,9 @@ section.top-banner{
       letter-spacing: -2px;
       color:white;
       line-height: 1;
+      @media(max-width:768px){
+        font-size: 28px;
+      }
       &.ls{
         letter-spacing: 3px;
         line-height: 1.5;
