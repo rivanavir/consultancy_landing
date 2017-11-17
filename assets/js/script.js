@@ -50,6 +50,10 @@ $(document).ready(function () {
   $('#serviceSect').stellar();
   $('#valueSection').stellar();
   $('#logosBlock').stellar();
+
+  $('.navbar-nav li').on('click', function(){
+    $('#mainNavbar').collapse('toggle');
+  })
   
   let slider = $('#capabilitySlider').lightSlider({
     item: 3,

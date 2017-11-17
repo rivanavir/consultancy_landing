@@ -15,7 +15,6 @@ body{
   overflow: hidden;
   
   h3.main-ttl{
-    // color:;
     font-size: 34px;
     font-weight: 300;
     text-transform: uppercase;
@@ -33,7 +32,7 @@ header.header{
   top: 0;
   left: 0;
   right: 0;
-  z-index: 100;
+  z-index: 150;
   nav.navbar{
     border:0;
     border-radius:0;
@@ -51,6 +50,7 @@ header.header{
       }
       a.navbar-brand{
         img{
+          width: 250px;
           @media(max-width:768px){
             width: 200px;
           }
@@ -135,15 +135,23 @@ section.top-banner{
       margin-bottom: 0;
       color:white;
       font-size: 18px;
-      line-height: 2;
-      span{
-        text-transform: uppercase;
-        font-size: 32px;
-        letter-spacing: -3px;
-        &.ls{
-          letter-spacing: 3px;
-          line-height: 1.5;
-        }
+      line-height: 3.5;
+      display:inline-block;
+      &.part{
+        line-height: 1.5;
+      }
+    }
+    span{
+      text-transform: uppercase;
+      font-size: 32px;
+      letter-spacing: -2px;
+      color:white;
+      line-height: 1;
+      &.ls{
+        letter-spacing: 3px;
+        line-height: 1.5;
+        margin-bottom: -5px;
+        display: inline-block;
       }
     }
   }
@@ -166,14 +174,37 @@ section.service-section{
   background-size: cover;
   padding: 200px 0;
   background-attachment: fixed;
+  position: relative;
   @media(max-width:768px){
     padding: 50px 0;
+  }
+  &:before{
+    position: absolute;
+    content: "";
+    display: block;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 50;
+    background: rgba(0,0,0,0.3);
+    background: -moz-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%);
+    background: -webkit-gradient(left top, right top, color-stop(0%, rgba(0,0,0,0.3)), color-stop(100%, rgba(0,0,0,0.3)));
+    background: -webkit-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%);
+    background: -o-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%);
+    background: -ms-linear-gradient(left, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%);
+    background: linear-gradient(to right, rgba(0,0,0,0.3) 0%, rgba(0,0,0,0.3) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#000000', GradientType=1 );
   }
   h4{
     color:white;
     font-size: 26px;
   }
   .service-block-wrap{
+    position: relative;
+    z-index: 100;
     display: flex;
     justify-content: space-between;
     @media(max-width:768px){
@@ -199,6 +230,8 @@ section.service-section{
   }
   .offer-help-block{
     padding-top: 30px;
+    position: relative;
+    z-index: 100;
     .offer-row{
       padding-top: 10px;
       ul.offer-list{
@@ -353,7 +386,7 @@ section.approach-section{
     &:after{
       position: absolute;
       display: inline-block;
-      font-size: 150px;
+      font-size: 180px;
       font-style: italic;
       font-weight: bold;
       color:#f2f2f2;
@@ -367,14 +400,19 @@ section.approach-section{
     }
     &:before{
       content: open-quote;
-      top: -20px;
-      left: -20px;
+      top: 40px;
+      left: -30px;
+      @media(max-width:768px){
+        left: -20px;
+        top: -30px;
+      }
     }
     &:after{
       content: close-quote;
       right: -20px;
-      bottom: -20px;
+      bottom: 40px;
       @media(max-width:768px){
+        bottom: -30px;
         right: 0;
       }
     }
@@ -652,7 +690,7 @@ section.what-they-say-block{
       }
       .leftTxt{
         min-width: 60%;
-        padding: 0 10px;
+        padding: 0 10px 0 10%;
         border-right:1px solid rgba(255,255,255,.3);
         text-align: right;
         @media(max-width:768px){

@@ -19,7 +19,7 @@
         <div class="container-fluid">
           <!-- Brand and toggle get grouped for better mobile display -->
           <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#mainNavbar" aria-expanded="false">
               <span class="sr-only">Toggle navigation</span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
@@ -31,10 +31,10 @@
           </div>
       
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+          <div class="collapse navbar-collapse" id="mainNavbar">
             <ul class="nav navbar-nav navbar-right">
-              <li data-href="#topBanner"><a href="#">Home</a></li>
-              <li data-href="#serviceSect" class="active"><a href="#">Services</a></li>
+              <li data-href="#topBanner" class="active"><a href="#">Home</a></li>
+              <li data-href="#serviceSect"><a href="#">Services</a></li>
               <li data-href="#capabilitySect"><a href="#">Capabilities</a></li>
               <li data-href="#approachSect"><a href="#">Approach</a></li>
               <li data-href="#aboutSect"><a href="#">About</a></li>
@@ -47,13 +47,11 @@
     </header>
     <section class="top-banner" data-stellar-background-ratio="0" id="topBanner">
       <div class="top-banner-inner">
-        <p>
           <span>Welcome</span><br>
-          I help businesses to <br>
+          <p>I help businesses to</p><br>
           <span class="ls">change, transform</span><br>
-          or <span class="ls">transition</span><br>
-          from where they are now, to where they want to be.
-        </p>
+          <p class="part">or</p> <span class="ls">transition</span><br>
+          <p>from where they are now, to where they want to be.</p>
       </div>
     </section>
     <section class="txt-layer">
@@ -370,7 +368,6 @@
   </div>
   <footer class="footer">
     <p class="copyright text-center">
-      <i class="fa fa-send"></i>
       Copyright Adrian Thompson Consulting Ltd. 2017. All rights reserved.
     </p>
   </footer>
